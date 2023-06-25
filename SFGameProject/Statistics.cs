@@ -40,6 +40,7 @@ namespace SFGameProject
             }
             else
                 Console.WriteLine("Demon");
+
             Console.WriteLine("Level: " + monster.Level);
             Console.WriteLine("Strength: " + monster.Strength);
             Console.WriteLine("HP: " + monster.HealthPoints);

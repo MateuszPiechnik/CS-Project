@@ -157,7 +157,7 @@ namespace SFGameProject
             }
             else
             {
-                Console.WriteLine("You Lose");
+                Console.WriteLine("\r\nUnfortunately, the opponent turned out to be too strong and you failed to complete the game and you end your journey on level " + level + " :(");
                 System.Environment.Exit(1);
             }
         }

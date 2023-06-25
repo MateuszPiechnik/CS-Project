@@ -35,7 +35,7 @@ namespace SFGameProject
         {
             return "Welcome to the game!\nThe goal of the game is to beat 10 opponents and not to die\nEverything depends on your choice. So it is important tho choose " +
                 "wisely, because as you level up, you have to defeat stronger opponents\n" +
-                "\n1 - next\n2 - quit";
+                "\n1 - next\n2 - quit game";
         }
     }
 }

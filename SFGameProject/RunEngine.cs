@@ -47,17 +47,24 @@ namespace SFGameProject
             List<IMonster> monsterList = new List<IMonster> { gob, gob2,goblinC };
 
             int level=1;
-            foreach(IMonster monster in monsterList)
+            foreach (IMonster monster in monsterList)
             {
                 app.Duel(prof, monster, wp, stat, level);
-                string str = "";
-                str = Console.ReadLine();
-                app.Action(str);
-                app.AddStats(level*5, prof,stat);
-                level++;
-                Console.WriteLine("1 - Go to level " + level + "2 - quit game");
-                str = Console.ReadLine();
-                app.Action(str);
+                if (level == 10)
+                {
+                    app.Action("koniec");
+                }
+                else
+                {
+                    string str = "";
+                    str = Console.ReadLine();
+                    app.Action(str);
+                    app.AddStats(level * 5, prof, stat);
+                    level++;
+                    Console.WriteLine("1 - Go to level " + level + " 2 - quit game");
+                    str = Console.ReadLine();
+                    app.Action(str);
+                }
             }
         }
     }

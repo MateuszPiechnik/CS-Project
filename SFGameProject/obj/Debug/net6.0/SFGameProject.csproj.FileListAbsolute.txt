@@ -1,0 +1,15 @@
+C:\Users\mateu\OneDrive\Pulpit\EiT\DaCH-LO-OA\SFGameProject\SFGameProject\obj\Debug\net6.0\SFGameProject.csproj.AssemblyReference.cache
+C:\Users\mateu\OneDrive\Pulpit\EiT\DaCH-LO-OA\SFGameProject\SFGameProject\obj\Debug\net6.0\SFGameProject.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mateu\OneDrive\Pulpit\EiT\DaCH-LO-OA\SFGameProject\SFGameProject\obj\Debug\net6.0\SFGameProject.AssemblyInfoInputs.cache
+C:\Users\mateu\OneDrive\Pulpit\EiT\DaCH-LO-OA\SFGameProject\SFGameProject\obj\Debug\net6.0\SFGameProject.AssemblyInfo.cs
+C:\Users\mateu\OneDrive\Pulpit\EiT\DaCH-LO-OA\SFGameProject\SFGameProject\obj\Debug\net6.0\SFGameProject.csproj.CoreCompileInputs.cache
+C:\Users\mateu\OneDrive\Pulpit\EiT\DaCH-LO-OA\SFGameProject\SFGameProject\bin\Debug\net6.0\SFGameProject.exe
+C:\Users\mateu\OneDrive\Pulpit\EiT\DaCH-LO-OA\SFGameProject\SFGameProject\bin\Debug\net6.0\SFGameProject.deps.json
+C:\Users\mateu\OneDrive\Pulpit\EiT\DaCH-LO-OA\SFGameProject\SFGameProject\bin\Debug\net6.0\SFGameProject.runtimeconfig.json
+C:\Users\mateu\OneDrive\Pulpit\EiT\DaCH-LO-OA\SFGameProject\SFGameProject\bin\Debug\net6.0\SFGameProject.dll
+C:\Users\mateu\OneDrive\Pulpit\EiT\DaCH-LO-OA\SFGameProject\SFGameProject\bin\Debug\net6.0\SFGameProject.pdb
+C:\Users\mateu\OneDrive\Pulpit\EiT\DaCH-LO-OA\SFGameProject\SFGameProject\obj\Debug\net6.0\SFGameProject.dll
+C:\Users\mateu\OneDrive\Pulpit\EiT\DaCH-LO-OA\SFGameProject\SFGameProject\obj\Debug\net6.0\refint\SFGameProject.dll
+C:\Users\mateu\OneDrive\Pulpit\EiT\DaCH-LO-OA\SFGameProject\SFGameProject\obj\Debug\net6.0\SFGameProject.pdb
+C:\Users\mateu\OneDrive\Pulpit\EiT\DaCH-LO-OA\SFGameProject\SFGameProject\obj\Debug\net6.0\SFGameProject.genruntimeconfig.cache
+C:\Users\mateu\OneDrive\Pulpit\EiT\DaCH-LO-OA\SFGameProject\SFGameProject\obj\Debug\net6.0\ref\SFGameProject.dll

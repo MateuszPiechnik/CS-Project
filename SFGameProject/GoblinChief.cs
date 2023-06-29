@@ -15,7 +15,7 @@ namespace SFGameProject
             Level = level;
             this.sword = sword;
             Strength = 15;
-            HealthPoints = 15000 * Level;
+            HealthPoints = 10000 * Level;
         }
 
         public int Level { get; set; }
@@ -24,14 +24,14 @@ namespace SFGameProject
             get { return str; }
             set
             {
-                str = Level * 15;
+                str = Level * 10;
             }
         }
         public int HealthPoints { get; set; }
 
         public void DoDamage(IProffesion prof)
         {
-            prof.HealthPoints -= sword.AverageDamage() + Strength * 100;
+            prof.HealthPoints -= 2*sword.AverageDamage() * Strength ;
         }
 
         public void SpecialAbility(int turn)

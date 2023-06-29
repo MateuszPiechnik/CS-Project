@@ -15,7 +15,7 @@ namespace SFGameProject
             Cleverness = 10;
             Intelligence = 20;
             Luck = 10;
-            HealthPoints = 5000;
+            HealthPoints = 25000;
         }
 
         public int Luck { get; set; }
@@ -33,13 +33,22 @@ namespace SFGameProject
             else
                 return false;
         }
+        public bool CheckSecondaryStats()
+        {
+            if (Cleverness < 2 || Strength < 2)
+            {
+                return false;
+            }
+            else
+                return true;
+        }
         public void Attack(IMonster monster, IWeapon weapon, int n)
         {
             monster.HealthPoints -= Damage(weapon,n);
         }
         public void SpecialAttack(IGameCharacter gameCharacter)
         {
-            gameCharacter.HealthPoints += 1500;
+            gameCharacter.HealthPoints += Intelligence*100;
             Strength -= 2;
             Cleverness -= 2;
         }
@@ -48,9 +57,9 @@ namespace SFGameProject
         {
 
             if (CriticalAttack(n))
-                return 2*(weapon.AverageDamage()+Intelligence*weapon.UpperRangeOfDamage);
+                return 2*(weapon.AverageDamage()*50+ Intelligence * weapon.UpperRangeOfDamage);
             else
-                return weapon.AverageDamage() + Intelligence * weapon.UpperRangeOfDamage;
+                return weapon.AverageDamage()*50 + Intelligence * weapon.UpperRangeOfDamage;
         }
     }
 }

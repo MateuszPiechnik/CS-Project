@@ -31,6 +31,11 @@ namespace SFGameProject
             }
         }
 
+        public override void Choice(string s, IProffesion proffesion, IWeapon weapon, IMonster monster, int n)
+        {
+            throw new NotImplementedException();
+        }
+
         public override string Info()
         {
             return "Welcome to the game!\nThe goal of the game is to beat 10 opponents and not to die\nEverything depends on your choice. So it is important tho choose " +

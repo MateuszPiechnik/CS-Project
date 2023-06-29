@@ -17,6 +17,11 @@ namespace SFGameProject
             parentApp.ChangeState(new AttackState(parentApp));
         }
 
+        public override void Choice(string s, IProffesion proffesion, IWeapon weapon, IMonster monster, int n)
+        {
+            throw new NotImplementedException();
+        }
+
         public override string Info()
         {
             Console.Clear();

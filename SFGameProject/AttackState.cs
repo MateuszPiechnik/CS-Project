@@ -14,7 +14,7 @@ namespace SFGameProject
 
         public override void Action(string s)
         {
-            while (s != "1" && s != "2")
+            while (s != "1" && s != "2" && s!= "koniec")
             {
                 s = Console.ReadLine();
             }
@@ -30,6 +30,32 @@ namespace SFGameProject
             else if (s == "koniec")
             {
                 parentApp.ChangeState(new EndGameState(parentApp));
+            }
+        }
+
+        public override void Choice(string s, IProffesion proffesion, IWeapon weapon, IMonster monster, int n)
+        {
+            if (s == "1")
+            {
+                proffesion.Attack(monster, weapon, n);
+            }
+            else
+            {
+                if (proffesion.CheckSecondaryStats())
+                {
+                    if (proffesion is Hunter)
+                    {
+                        proffesion.SpecialAttack(monster);
+                    }
+                    else
+                    {
+                        proffesion.SpecialAttack(proffesion);
+                    }
+                }
+                else
+                {
+                    proffesion.Attack(monster, weapon, n);
+                }
             }
         }
 

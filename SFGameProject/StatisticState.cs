@@ -29,6 +29,28 @@ namespace SFGameProject
             }
         }
 
+        public override void Choice(string s, IProffesion proffesion, IWeapon weapon, IMonster monster, int n)
+        {
+            if (s == "1")
+            {
+                proffesion.Strength += 1;
+            }
+            else if (s == "2")
+            {
+                proffesion.Cleverness += 1;
+            }
+            else if (s == "3")
+            {
+                proffesion.Intelligence += 1;
+            }
+            else if (s == "4")
+            {
+                proffesion.Luck += 1;
+            }
+            else
+                proffesion.HealthPoints += 2000;
+        }
+
         public override string Info()
         {
             Console.Clear();

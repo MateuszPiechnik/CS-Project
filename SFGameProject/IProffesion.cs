@@ -17,6 +17,8 @@ namespace SFGameProject
         void SpecialAttack(IGameCharacter gameCharacter);
         bool CriticalAttack(int n);
 
+        bool CheckSecondaryStats();
+
 
     }
 }

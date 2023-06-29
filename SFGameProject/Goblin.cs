@@ -27,7 +27,7 @@ namespace SFGameProject
 
         public void DoDamage(IProffesion prof)
         {
-            prof.HealthPoints -= Strength*100;
+            prof.HealthPoints -= Strength*50;
         }
 
         public void SpecialAbility(int turn)

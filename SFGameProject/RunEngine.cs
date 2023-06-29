@@ -39,12 +39,22 @@ namespace SFGameProject
             app.Action(s);
 
             Sword goblinSword = new Sword();
-            Goblin gob = new Goblin(1);
-            Goblin gob2 = new Goblin(2);
-            GoblinChief goblinC = new GoblinChief(3, goblinSword);
-            Demon demon = new Demon(1);
+            Sword goblinSword2 = new Sword();
+            Sword goblinSword3 = new Sword();
+            Goblin goblin1 = new Goblin(1);
+            Goblin goblin2 = new Goblin(2);
+            Goblin goblin3 = new Goblin(4);
+            Goblin goblin4 = new Goblin(5);
+            Goblin goblin5 = new Goblin(7);
+            Goblin goblin6 = new Goblin(8);
 
-            List<IMonster> monsterList = new List<IMonster> { gob, gob2,goblinC };
+           
+            GoblinChief goblinC1 = new GoblinChief(3, goblinSword);
+            GoblinChief goblinC2 = new GoblinChief(6, goblinSword2);
+            GoblinChief goblinC3 = new GoblinChief(9, goblinSword3);
+            Demon demon = new Demon(10);
+
+            List<IMonster> monsterList = new List<IMonster> { goblin1,goblin2,goblinC1,goblin3,goblin4,goblinC2,goblin5,goblin6,goblinC3,demon };
 
             int level=1;
             foreach (IMonster monster in monsterList)
@@ -53,13 +63,22 @@ namespace SFGameProject
                 if (level == 10)
                 {
                     app.Action("koniec");
+                    Console.WriteLine(app.Info());
                 }
                 else
                 {
                     string str = "";
                     str = Console.ReadLine();
                     app.Action(str);
-                    app.AddStats(level * 5, prof, stat);
+                    int x = level * 5;
+                    while (x != 0)
+                    {
+                        app.AddStats(x, prof, stat);
+                        string pts;
+                        pts = Console.ReadLine();
+                        app.Choice(pts, prof, wp, monster, x);
+                        x--;
+                    }                   
                     level++;
                     Console.WriteLine("1 - Go to level " + level + " 2 - quit game");
                     str = Console.ReadLine();

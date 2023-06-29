@@ -29,6 +29,11 @@ namespace SFGameProject
             currentState.Action(s);
         }
 
+        public void Choice(string s, IProffesion proffesion, IWeapon weapon, IMonster monster, int n)
+        {
+            currentState.Choice( s,  proffesion,  weapon,  monster,  n);
+        }
+
         public bool checkHP(IGameCharacter gameCharacter)
         {
             if (gameCharacter.HealthPoints > 0)
@@ -39,46 +44,15 @@ namespace SFGameProject
                 return false;
         }
 
-        public bool checkSecondaryStats(IProffesion prof)
-        {
-            if (prof.Cleverness < 2 || prof.Intelligence < 2 || prof.Strength < 2)
-            {
-                return false;
-            }
-            else return true;
-        }
 
         public void AddStats(int x, IProffesion profession, Statistics stat)
         {
-            while (x != 0)
-            {
-                Console.WriteLine(Info());
-                Console.WriteLine("\n\nActual Stats:");
-                stat.PrintStats(profession);
-                Console.WriteLine("Points to distribute: " + x);
-                string pts = "";
-                Console.Write("\nYour choice: ");
-                pts = Console.ReadLine();
-                if (pts == "1")
-                {
-                    profession.Strength += 1;
-                }
-                else if (pts == "2")
-                {
-                    profession.Cleverness += 1;
-                }
-                else if (pts == "3")
-                {
-                    profession.Intelligence += 1;
-                }
-                else if (pts == "4")
-                {
-                    profession.Luck += 1;
-                }
-                else
-                    profession.HealthPoints += 2000;
-                x--;
-            }
+            Console.WriteLine(Info());
+            Console.WriteLine("\n\nActual Stats:");
+            stat.PrintStats(profession);
+            Console.WriteLine("Points to distribute: " + x);
+
+            Console.Write("\nYour choice: ");
         }
 
         public void Duel(IProffesion proffesion, IMonster monster, IWeapon weapon, Statistics stats, int level)
@@ -86,11 +60,14 @@ namespace SFGameProject
             Console.Clear();
             int turn = 1;
             int damage = 0;
+            int monsterHealth;
             while (checkHP(proffesion) == true && checkHP(monster) == true)
             {
+                monsterHealth = monster.HealthPoints;
                 Console.WriteLine(Info());
                 Random random = new Random();
                 int n = random.Next(0, 50);
+
                 if(turn !=1)
                 {
                     Console.WriteLine("\nYour damage in last turn:" + damage);
@@ -100,38 +77,16 @@ namespace SFGameProject
 
                 Console.WriteLine("\nMonster Stats:");
                 stats.MonsterStats(monster);
+
                 Console.Write("\n---------------------------\nYour stats:\n");
                 stats.PrintStats(proffesion);
 
 
                 Console.Write("\n\nTurn: " + turn + "\nChoice: ");
-                string x = Console.ReadLine();
-                if (x == "1")
-                {
-                    proffesion.Attack(monster, weapon,n);
-                    damage = proffesion.Damage(weapon, n);
-                }
-                else
-                {
-                    if (checkSecondaryStats(proffesion))
-                    {
-                        if (proffesion is Hunter)
-                        {
-                            proffesion.SpecialAttack(monster);
-                            damage = 3000;
-                        }
-                        else
-                        {
-                            proffesion.SpecialAttack(proffesion);
-                        }
-                    }
-                    else
-                    {
-                        proffesion.Attack(monster, weapon, n);
-                        damage = proffesion.Damage(weapon, n);
-                    }
+                string s = Console.ReadLine();
+                Choice(s, proffesion, weapon, monster, n);
 
-                }
+                damage = monsterHealth - monster.HealthPoints;
 
                 if (checkHP(monster) == false)
                 {

@@ -14,7 +14,7 @@ namespace SFGameProject
             Intelligence = 10;
             Cleverness = 10;
             Strength = 20;
-            HealthPoints = 20000;
+            HealthPoints = 40000;
         }
         public int Luck { get; set; }
         public int Intelligence { get; set; }
@@ -25,6 +25,16 @@ namespace SFGameProject
         public void Attack(IMonster monster, IWeapon weapon,int n)
         {
             monster.HealthPoints -=Damage(weapon,n);
+        }
+
+        public bool CheckSecondaryStats()
+        {
+            if (Cleverness < 2 || Intelligence < 2)
+            {
+                return false;
+            }
+            else
+                return true;
         }
 
         public bool CriticalAttack(int n)
@@ -41,10 +51,10 @@ namespace SFGameProject
         {
             if (CriticalAttack(n))
             {
-                return 2* weapon.AverageDamage() * Strength;
+                return 6* weapon.AverageDamage() * Strength;
             }
             else
-                return weapon.AverageDamage() * Strength;
+                return 3*weapon.AverageDamage() * Strength;
         }
         public void SpecialAttack(IGameCharacter gameCharacter)
         {

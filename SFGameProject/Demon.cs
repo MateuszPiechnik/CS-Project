@@ -25,7 +25,7 @@ namespace SFGameProject
 
         public void DoDamage(IProffesion prof)
         {
-            prof.HealthPoints -= Strength * 17;
+            prof.HealthPoints -= Strength * 20;
         }
     }
 }
